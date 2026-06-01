@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette claire et chaude, papier-coton */
-  --color-bg: #fbfaf7;
-  --color-bg-elev: #f3f1ec;
-  --color-fg: #0e0e0c;
-  --color-muted: #6c6c63;
-  --color-muted-strong: #3a3a32;
-  --color-line: rgba(14, 14, 12, 0.10);
-  --color-line-strong: rgba(14, 14, 12, 0.20);
-  --color-accent: #11998b;
-  --color-accent-soft: rgba(17, 153, 139, 0.10);
+  /* Palette froide, bleu-cygne + rose sakura */
+  --color-bg: #f3f8fd;
+  --color-bg-elev: #e4eef8;
+  --color-fg: #0b1a2e;
+  --color-muted: #4d6b84;
+  --color-muted-strong: #1e3d58;
+  --color-line: rgba(11, 26, 46, 0.10);
+  --color-line-strong: rgba(11, 26, 46, 0.20);
+  --color-accent: #c73d68;
+  --color-accent-soft: rgba(199, 61, 104, 0.10);
 
   /* Fonts (chargées via Google Fonts dans Layout.astro) */
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", "Inter Tight", ui-serif, Georgia, serif;
+  --font-display: "Cormorant Garant", "Inter Tight", ui-serif, Georgia, serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Type scale (fluide) */
@@ -155,6 +155,38 @@ body {
 
 @keyframes reveal {
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stagger d'entrée hero — chaque élément porte --hi: 0,1,2… */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-enter 800ms cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--hi, 0) * 130ms) both;
+  }
+}
+
+@keyframes hero-enter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section foncée (chiffres clés) */
+.section-dark {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+.section-dark .eyebrow {
+  color: rgba(243, 248, 253, 0.40);
+}
+
+/* Texture grain légère sur le hero */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.35;
 }
 
 /* FAQ, accordéon natif <details>, sans JS */

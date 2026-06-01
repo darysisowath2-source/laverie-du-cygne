@@ -45,7 +45,7 @@ Objectif : impressionner pour signer la création (400-700 €) + maintenance me
 - **Astro v6** + **Tailwind v4** (via `@tailwindcss/vite`)
 - Pas d'islands React au démarrage (Astro pur). Ajouter `framer-motion` + island React seulement si une animation complexe le justifie.
 - Pour smooth scroll premium : ajouter `lenis` quand pertinent (cf. portfolio Dary qui utilise déjà).
-- Déploiement : Vercel (CLI `vercel --prod --yes` après `pnpm build`).
+- Déploiement : **Cloudflare Pages**, en mode auto-deploy Git (chaque `git push` sur `main` déclenche un rebuild + redéploiement). Build command `pnpm build`, output `dist/`, Node 22 (épinglé via `.nvmrc`). Pas d'adaptateur SSR : site 100 % statique.
 
 ## Posture de travail
 
@@ -57,8 +57,8 @@ Tu es aussi **Senior UX Architect** : chaque section doit réduire la charge men
 1. `pnpm install` (si pas déjà fait)
 2. `pnpm dev` → http://localhost:4321
 3. Concevoir Hero + sections en commit incrémental, voir en navigateur après chaque bloc.
-4. Quand stable : `pnpm build` puis `vercel --prod --yes` (créera un projet Vercel `laverie-halles-limoges`).
-5. URL de la démo à envoyer au prospect au format `laverie-halles-limoges.vercel.app` ou alias custom.
+4. Quand stable : `git push` sur `main`. Cloudflare Pages rebuild et redéploie automatiquement (projet `laverie-du-cygne`). Vérifier le build local avec `pnpm build` avant de pousser.
+5. URL de la démo à envoyer au prospect au format `laverie-du-cygne.pages.dev` ou domaine custom rattaché dans Cloudflare.
 
 ## À demander au prospect (script DM/email à envoyer en parallèle)
 
