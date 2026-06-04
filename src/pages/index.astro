@@ -3,29 +3,24 @@ import Layout from '../layouts/Layout.astro'
 import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
 
-// État des infos :
-//   CONFIRMÉ via laverie24.fr + bottin.fr :
-//     - adresse : Centre Commercial le Cygne, 1 Rue Léo Lagrange, 10600 La Chapelle-Saint-Luc
-//     - horaires : tous les jours 7h-22h
-//     - accès PMR (parking, entrée adaptée, places assises)
-//     - note : 4.5/5 (73 avis)
-//   À CONFIRMER avec le client :
-//     - téléphone (trouvé 09 83 47 57 22 sur bottin, à vérifier)
-//     - tarifs réels des machines
-//     - lessive incluse ou en vente sur place
-//     - photos réelles du lieu (remplacer les Unsplash)
-//     - Wimline / QR code suivi machines (à vérifier sur place)
+// Infos CONFIRMÉES (photos réelles du client + relevés sur place) :
+//   - adresse : Centre Commercial le Cygne, 1 Rue Léo Lagrange, 10600 La Chapelle-Saint-Luc
+//   - horaires : tous les jours 7h-22h (vu sur vitrine)
+//   - téléphone : 09 83 47 57 22 (vu sur place)
+//   - tarifs réels : lavage 8kg 5,20€ / 14kg 7,70€ / 20kg 9,70€ ; séchage 2,90€/15min ; lessive 0,80€
+//   - machines Electrolux, accès PMR, note 4,5/5 (73 avis)
+//   - photos : vraies photos du lieu (public/images/cygne-*.jpg)
 
-const hero = 'https://images.unsplash.com/photo-1550025005-05b9002486c5?auto=format&fit=crop&w=1600&q=80'
-const imgMachines = 'https://images.unsplash.com/photo-1604335398980-ededcadcc37d?auto=format&fit=crop&w=1400&q=80'
-const imgInterieur = 'https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?auto=format&fit=crop&w=1400&q=80'
+const hero = '/images/cygne-4.jpg'        // vitrine + logo Laverie du Cygne
+const imgMachines = '/images/cygne-6.jpg' // vue d'ensemble des machines
+const imgInterieur = '/images/cygne-3.jpg' // salle d'attente lumineuse
 
 const mapsUrl = 'https://www.google.com/maps/search/Laverie+du+Cygne+La+Chapelle-Saint-Luc/@48.317,4.033,17z'
 
 const tarifs = [
-  { capacite: '8 kg',  prix: '4,50 €', duree: '35 min', usage: 'standard' },
-  { capacite: '14 kg', prix: '8 €',    duree: '40 min', usage: 'familial' },
-  { capacite: '20 kg', prix: '11 €',   duree: '50 min', usage: 'couette'  },
+  { capacite: '8 kg',  prix: '5,20 €', duree: '35 min', usage: 'standard' },
+  { capacite: '14 kg', prix: '7,70 €', duree: '40 min', usage: 'familial' },
+  { capacite: '20 kg', prix: '9,70 €', duree: '50 min', usage: 'couette'  },
 ]
 
 const horaires = [
@@ -234,7 +229,8 @@ const faq = [
 
         <div class="mt-10 flex flex-wrap items-baseline gap-x-8 gap-y-3 text-sm">
           <span class="text-muted">+</span>
-          <span><span class="font-medium">Séchage</span> <span class="text-muted">1 € / 10 min</span></span>
+          <span><span class="font-medium">Séchage</span> <span class="text-muted">2,90 € / 15 min</span></span>
+          <span><span class="font-medium">Lessive</span> <span class="text-muted">0,80 € au distributeur</span></span>
         </div>
       </div>
     </section>

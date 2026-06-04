@@ -6,4 +6,6 @@ dist
 .env.*.local
 .vercel
 .DS_Store
-.vercel
+
+# Documents privés (devis, factures) : ne jamais publier
+devis/
