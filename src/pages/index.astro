@@ -317,14 +317,25 @@ const faq = [
         </div>
 
         <div class="lg:col-span-12 mt-4 lg:mt-8">
-          <div class="relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden border border-line bg-bg-elev">
+          <p class="eyebrow mb-3">Plan d'accès</p>
+          <div class="map-embed relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden border border-line bg-bg-elev cursor-pointer">
+            <!-- Filet sakura en haut du cadre -->
+            <div class="absolute top-0 inset-x-0 h-px z-20" style="background: linear-gradient(to right, transparent, var(--color-accent), transparent); opacity: 0.5;"></div>
+
             <iframe
-              src="https://maps.google.com/maps?q=Laverie+du+Cygne+La+Chapelle-Saint-Luc&z=17&output=embed"
+              src="https://maps.google.com/maps?q=Laverie+du+Cygne+La+Chapelle-Saint-Luc&z=16&output=embed"
               class="absolute inset-0 w-full h-full"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Carte, Laverie du Cygne à La Chapelle-Saint-Luc"
             ></iframe>
+
+            <!-- Indice d'ouverture au survol, style éditorial -->
+            <div class="map-hint absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 px-3 py-1.5 bg-fg text-bg rounded-sm text-sm font-medium pointer-events-none">
+              Ouvrir dans Maps
+              <span aria-hidden="true">→</span>
+            </div>
+
             <a
               href={mapsUrl}
               target="_blank"

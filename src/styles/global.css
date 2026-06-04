@@ -72,6 +72,24 @@ body {
   font-weight: 500;
 }
 
+/* Carte intégrée : teintée pour s'harmoniser, révélée en couleur au survol */
+.map-embed iframe {
+  filter: grayscale(0.7) contrast(1.05) brightness(1.03);
+  transition: filter 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.map-embed:hover iframe {
+  filter: grayscale(0) contrast(1) brightness(1);
+}
+.map-embed .map-hint {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+.map-embed:hover .map-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hairline horizontale, signature éditoriale */
 .hairline {
   height: 1px;
