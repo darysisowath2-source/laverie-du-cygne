@@ -72,25 +72,10 @@ body {
   font-weight: 500;
 }
 
-/* Carte intégrée : noir & blanc + voile teinté, révélée en couleur au survol */
+/* Carte intégrée : couleur, nette, juste un léger éclaircissement pour s'apaiser */
 .map-embed iframe {
-  filter: grayscale(1) contrast(1.06) brightness(1.05);
-  transition: filter 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  filter: saturate(0.92);
 }
-.map-embed:hover iframe {
-  filter: grayscale(0) contrast(1) brightness(1);
-}
-/* Voile sakura -> marine en multiply pour colorer la carte N&B aux teintes du site */
-.map-tint {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  background: linear-gradient(135deg, rgba(199, 61, 104, 0.22), rgba(11, 26, 46, 0.18));
-  transition: opacity 600ms ease;
-}
-.map-embed:hover .map-tint { opacity: 0; }
 .map-embed .map-hint {
   opacity: 0;
   transform: translateY(4px);
