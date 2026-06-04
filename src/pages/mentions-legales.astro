@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+
+const sections = [
+  {
+    titre: 'Éditeur du site',
+    lignes: [
+      '<strong>LAVERIE DU CYGNE</strong>',
+      'Société par actions simplifiée (SAS) au capital de 15 000 €',
+      'Siège social : 1 rue Léo Lagrange, 10600 La Chapelle-Saint-Luc',
+      'SIRET : 821 977 386 00019',
+      'RCS Troyes : 821 977 386',
+      'Code APE : 96.01B (Blanchisserie-teinturerie de détail)',
+      'Téléphone : 09 83 47 57 22',
+      'Directeur de la publication : M. Daniel Thibord, Président',
+    ],
+  },
+  {
+    titre: 'Hébergement',
+    lignes: [
+      'Le site est hébergé par <strong>Cloudflare, Inc.</strong>',
+      '101 Townsend Street, San Francisco, CA 94107, États-Unis',
+      'cloudflare.com',
+    ],
+  },
+  {
+    titre: 'Conception et réalisation',
+    lignes: [
+      'Site conçu et réalisé par <strong>Veridian</strong>',
+      '29 rue Lanterne, 69001 Lyon',
+      'SIRET : 980 837 660 00011',
+      'Contact : robert.brunon@veridian.site',
+    ],
+  },
+  {
+    titre: 'Propriété intellectuelle',
+    lignes: [
+      "L'ensemble des contenus présents sur ce site (textes, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite et constitue une contrefaçon.",
+      'Les photographies de l\'établissement ont été fournies par la Laverie du Cygne.',
+    ],
+  },
+  {
+    titre: 'Données personnelles',
+    lignes: [
+      "Ce site est un site vitrine. Il ne collecte aucune donnée personnelle via un formulaire et ne dépose aucun cookie de suivi ou publicitaire.",
+      "Si vous contactez l'établissement par téléphone ou par e-mail, vos coordonnées sont utilisées uniquement pour répondre à votre demande. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant la Laverie du Cygne.",
+    ],
+  },
+  {
+    titre: 'Responsabilité',
+    lignes: [
+      "Les informations (horaires, tarifs, services) sont fournies à titre indicatif et peuvent évoluer. La Laverie du Cygne ne saurait être tenue responsable d'une erreur ou d'une indisponibilité temporaire du site.",
+    ],
+  },
+]
+---
+<Layout
+  title="Mentions légales · Laverie du Cygne"
+  description="Mentions légales du site de la Laverie du Cygne, La Chapelle-Saint-Luc."
+>
+  <Nav />
+
+  <main id="top" class="pt-14">
+    <section class="border-b border-line">
+      <div class="max-w-[820px] mx-auto px-5 sm:px-8 pt-20 sm:pt-28 pb-12">
+        <p class="eyebrow mb-3">Informations légales</p>
+        <h1 class="font-medium tracking-tight leading-[1.05]" style="font-size: var(--text-display);">
+          Mentions <em class="font-display italic font-light text-muted-strong">légales.</em>
+        </h1>
+        <p class="mt-6 text-muted">Dernière mise à jour : juin 2026</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-[820px] mx-auto px-5 sm:px-8 py-16 sm:py-20 divide-y divide-line">
+        {sections.map((s) => (
+          <div class="py-9 grid sm:grid-cols-3 gap-6">
+            <h2 class="font-medium tracking-tight text-lg sm:col-span-1">{s.titre}</h2>
+            <div class="sm:col-span-2 space-y-2 text-muted-strong leading-relaxed">
+              {s.lignes.map((l) => (
+                <p set:html={l}></p>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="border-t border-line">
+      <div class="max-w-[820px] mx-auto px-5 sm:px-8 py-10">
+        <a href="/#top" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline">
+          <span aria-hidden="true">←</span> Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

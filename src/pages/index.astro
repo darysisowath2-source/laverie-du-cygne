@@ -167,11 +167,12 @@ const faq = [
       </div>
 
       <!-- Image compacte pleine largeur sous le texte -->
-      <figure class="hero-item w-full aspect-[2/1] sm:aspect-[3/1] overflow-hidden bg-bg-elev" style="--hi: 5">
+      <figure class="hero-item w-full aspect-[4/3] sm:aspect-[2/1] overflow-hidden bg-bg-elev" style="--hi: 5">
         <img
           src={hero}
-          alt="Intérieur lumineux de la Laverie du Cygne, La Chapelle-Saint-Luc"
-          class="w-full h-full object-cover object-center"
+          alt="Vitrine de la Laverie du Cygne avec son enseigne, La Chapelle-Saint-Luc"
+          class="w-full h-full object-cover"
+          style="object-position: center 38%;"
           loading="eager"
           fetchpriority="high"
         />
@@ -262,11 +263,12 @@ const faq = [
     </section>
 
     <!-- Photo break éditorial -->
-    <div class="relative aspect-[21/9] overflow-hidden border-b border-line">
+    <div class="relative aspect-[16/10] sm:aspect-[16/7] overflow-hidden border-b border-line">
       <img
         src={imgInterieur}
         alt="Intérieur lumineux de la Laverie du Cygne"
         class="w-full h-full object-cover"
+        style="object-position: center 45%;"
         loading="lazy"
       />
       <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(11,26,46,0.55) 0%, rgba(11,26,46,0.15) 100%);"></div>
@@ -321,6 +323,9 @@ const faq = [
           <div class="map-embed relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden border border-line bg-bg-elev cursor-pointer">
             <!-- Filet sakura en haut du cadre -->
             <div class="absolute top-0 inset-x-0 h-px z-20" style="background: linear-gradient(to right, transparent, var(--color-accent), transparent); opacity: 0.5;"></div>
+
+            <!-- Voile teinté (carte N&B colorée aux teintes du site, disparait au survol) -->
+            <div class="map-tint"></div>
 
             <iframe
               src="https://maps.google.com/maps?q=Laverie+du+Cygne+La+Chapelle-Saint-Luc&z=16&output=embed"
