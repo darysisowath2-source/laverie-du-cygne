@@ -42,6 +42,17 @@ const chiffres = [
   { val: '≈ 1h',  label: 'Laver et sécher' },
 ]
 
+const etapes = [
+  { eyebrow: 'Premier geste', titre: 'Chargez votre linge', texte: "Choisissez votre machine selon le volume (8, 14 ou 20 kg). Lessive au distributeur sur place (0,80 €), ou apportez la vôtre." },
+  { eyebrow: 'Paiement', titre: 'Réglez à la borne', texte: "CB, sans contact ou espèces, rendu de monnaie jusqu'à 20 €. Pas besoin d'appoint, la machine démarre toute seule." },
+  { eyebrow: 'Et voilà', titre: 'Séchez et repartez', texte: "Récupérez votre linge puis séchez sur place (2,90 € les 15 min). Comptez environ une heure en tout." },
+]
+
+const galerie = [
+  { src: '/images/cygne-1.jpg', alt: 'Machines Electrolux et borne de paiement, Laverie du Cygne' },
+  { src: '/images/cygne-2.jpg', alt: 'Lave-linge et sèche-linge grande capacité, Laverie du Cygne' },
+]
+
 const faq = [
   {
     q: 'Faut-il apporter sa lessive ?',
@@ -236,6 +247,28 @@ const faq = [
       </div>
     </section>
 
+    <!-- Comment ça marche -->
+    <section id="comment" class="border-b border-line">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-20 sm:py-28 reveal-on-scroll">
+        <div class="mb-12">
+          <p class="eyebrow mb-3">Comment ça marche</p>
+          <h2 class="font-medium tracking-tight" style="font-size: var(--text-h2);">
+            Simple, <em class="font-display italic font-light text-muted-strong">en trois temps.</em>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-line border-y border-line">
+          {etapes.map((e) => (
+            <div class="py-9 sm:py-10 sm:px-8">
+              <p class="eyebrow mb-4" style="color: var(--color-accent);">{e.eyebrow}</p>
+              <h3 class="font-medium tracking-tight mb-3" style="font-size: var(--text-h3);">{e.titre}</h3>
+              <p class="text-muted leading-relaxed">{e.texte}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- Équipements -->
     <section id="equipements" class="border-b border-line bg-bg-elev">
       <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-20 sm:py-28 grid md:grid-cols-12 gap-10 items-center reveal-on-scroll">
@@ -259,6 +292,14 @@ const faq = [
         <figure class="md:col-span-6 aspect-[5/4] overflow-hidden bg-bg-elev">
           <img src={imgMachines} alt="Machines à laver Electrolux à hublot, Laverie du Cygne" class="w-full h-full object-cover" loading="lazy" />
         </figure>
+
+        <div class="md:col-span-12 grid sm:grid-cols-2 gap-px mt-2" style="background: var(--color-line);">
+          {galerie.map((g) => (
+            <figure class="aspect-[4/3] overflow-hidden bg-bg-elev">
+              <img src={g.src} alt={g.alt} class="w-full h-full object-cover" loading="lazy" />
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
 

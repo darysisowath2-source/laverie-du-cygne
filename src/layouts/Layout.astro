@@ -37,6 +37,32 @@ const {
     <meta property="og:image:height" content="800" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://laverie-du-cygne.pages.dev/images/cygne-4.jpg" />
+    <link rel="canonical" href={"https://laverie-du-cygne.pages.dev" + Astro.url.pathname} />
+
+    <!-- SEO local : donnees structurees (Google rich results, "laverie pres de moi") -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "DryCleaningOrLaundry",
+      "name": "Laverie du Cygne",
+      "image": "https://laverie-du-cygne.pages.dev/images/cygne-4.jpg",
+      "url": "https://laverie-du-cygne.pages.dev",
+      "telephone": "+33983475722",
+      "priceRange": "€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 rue Léo Lagrange, Centre commercial le Cygne",
+        "addressLocality": "La Chapelle-Saint-Luc",
+        "postalCode": "10600",
+        "addressCountry": "FR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 48.317, "longitude": 4.033 },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00", "closes": "22:00"
+      }],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "73" }
+    })} />
   </head>
   <body class="bg-bg text-fg antialiased">
     <slot />
