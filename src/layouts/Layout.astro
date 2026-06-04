@@ -10,6 +10,11 @@ const {
   title = 'Laverie du Cygne · La Chapelle-Saint-Luc',
   description = "Laverie automatique au Centre Commercial le Cygne, La Chapelle-Saint-Luc. Machines Electrolux 8 à 20 kg, parking devant, ouverte 7j/7 de 7h à 22h.",
 } = Astro.props
+
+// URL du site (depuis astro.config `site`) -> tout le SEO suit le domaine
+const SITE = (Astro.site?.href || 'https://laverie-du-cygne.pages.dev/').replace(/\/$/, '')
+const ogImage = SITE + '/images/cygne-4.jpg'
+const canonical = SITE + Astro.url.pathname
 ---
 <!doctype html>
 <html lang="fr">
@@ -32,20 +37,21 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:image" content="https://laverie-du-cygne.pages.dev/images/cygne-4.jpg" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="800" />
+    <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://laverie-du-cygne.pages.dev/images/cygne-4.jpg" />
-    <link rel="canonical" href={"https://laverie-du-cygne.pages.dev" + Astro.url.pathname} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="canonical" href={canonical} />
 
     <!-- SEO local : donnees structurees (Google rich results, "laverie pres de moi") -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "DryCleaningOrLaundry",
       "name": "Laverie du Cygne",
-      "image": "https://laverie-du-cygne.pages.dev/images/cygne-4.jpg",
-      "url": "https://laverie-du-cygne.pages.dev",
+      "image": ogImage,
+      "url": SITE,
       "telephone": "+33983475722",
       "priceRange": "€",
       "address": {
