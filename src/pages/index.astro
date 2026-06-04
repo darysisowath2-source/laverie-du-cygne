@@ -30,13 +30,14 @@ const horaires = [
 
 const atouts = [
   'Machines Electrolux 8, 14 et 20 kg',
-  'Accès PMR (parking, entrée adaptée)',
+  'Grand parking gratuit juste devant',
+  'Accès PMR (entrée et places adaptées)',
   'CB, sans contact et espèces (rendu jusqu\'à 20 €)',
   'Ouvert 7 jours sur 7',
 ]
 
 const chiffres = [
-  { val: '4,5★',  label: '73 avis Google' },
+  { val: '4,7★',  label: '73 avis Google' },
   { val: '7j/7',  label: 'Ouvert toute l\'année' },
   { val: '3',     label: 'Formats de machine' },
   { val: '≈ 1h',  label: 'Laver et sécher' },
@@ -82,7 +83,7 @@ const faq = [
 >
   <Nav />
 
-  <main id="top" class="pt-14">
+  <main id="top" class="pt-20">
 
     <!-- Hero -->
     <section class="border-b border-line relative overflow-hidden">
@@ -195,10 +196,10 @@ const faq = [
       <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-muted">
         <span class="flex items-center gap-2">
           <span class="text-accent font-medium">★★★★★</span>
-          <span>73 avis Google</span>
+          <span>4,7 / 5 · 73 avis Google</span>
         </span>
         <span class="hidden sm:block w-px h-4 bg-line-strong"></span>
-        <span>100 % de nos clients nous recommandent</span>
+        <span>Recommandée par ses habitués</span>
       </div>
     </div>
 
@@ -335,11 +336,19 @@ const faq = [
             10600 La Chapelle-Saint-Luc
           </p>
 
+          <div class="mt-6 inline-flex items-center gap-3 px-4 py-3 border border-line rounded-sm bg-bg-elev">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="text-accent shrink-0" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 17V7h4a3 3 0 0 1 0 6H9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-sm"><span class="font-medium text-fg">Parking gratuit</span> <span class="text-muted">juste devant la laverie</span></span>
+          </div>
+
           <a
             href={mapsUrl}
             target="_blank"
             rel="noopener"
-            class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
+            class="mt-8 block w-fit inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
           >
             Ouvrir dans Google Maps
             <span aria-hidden="true">→</span>

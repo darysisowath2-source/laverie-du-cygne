@@ -5,9 +5,9 @@ const isHome = Astro.url.pathname === '/'
 const base = isHome ? '' : '/'
 ---
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-bg/60 border-b border-line">
-  <nav class="max-w-[1240px] mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
+  <nav class="max-w-[1240px] mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
     <a href={isHome ? '#top' : '/'} class="flex items-center" aria-label="Laverie du Cygne, accueil">
-      <img src="/images/logo-cygne.png" alt="Laverie du Cygne" class="h-9 sm:h-10 w-auto" />
+      <img src="/images/logo-cygne.png" alt="Laverie du Cygne" class="h-12 sm:h-14 w-auto" />
     </a>
 
     <div class="hidden md:flex items-center gap-7 text-[13px] text-muted">

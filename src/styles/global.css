@@ -39,7 +39,7 @@ html {
 
 /* Décale les ancres pour qu'elles ne s'affichent pas sous la nav fixe */
 section[id] {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 96px;
 }
 
 body {
