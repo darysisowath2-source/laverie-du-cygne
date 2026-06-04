@@ -1,19 +1,22 @@
 ---
 // Nav éditoriale : wordmark + ancres desktop + hamburger mobile + CTA téléphone.
+// Sur les pages internes (ex. mentions légales), les ancres pointent vers l'accueil.
+const isHome = Astro.url.pathname === '/'
+const base = isHome ? '' : '/'
 ---
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-bg/60 border-b border-line">
   <nav class="max-w-[1240px] mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2" aria-label="Laverie du Cygne, retour en haut">
+    <a href={isHome ? '#top' : '/'} class="flex items-center gap-2" aria-label="Laverie du Cygne, accueil">
       <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
       <span class="font-medium tracking-tight text-[15px]">Laverie du Cygne</span>
     </a>
 
     <div class="hidden md:flex items-center gap-7 text-[13px] text-muted">
-      <a href="#tarifs" class="hover:text-fg transition-colors">Tarifs</a>
-      <a href="#equipements" class="hover:text-fg transition-colors">Équipements</a>
-      <a href="#visite" class="hover:text-fg transition-colors">Horaires</a>
-      <a href="#faq" class="hover:text-fg transition-colors">FAQ</a>
-      <a href="#contact" class="hover:text-fg transition-colors">Contact</a>
+      <a href={base + "#tarifs"} class="hover:text-fg transition-colors">Tarifs</a>
+      <a href={base + "#equipements"} class="hover:text-fg transition-colors">Équipements</a>
+      <a href={base + "#visite"} class="hover:text-fg transition-colors">Horaires</a>
+      <a href={base + "#faq"} class="hover:text-fg transition-colors">FAQ</a>
+      <a href={base + "#contact"} class="hover:text-fg transition-colors">Contact</a>
     </div>
 
     <div class="flex items-center gap-3">
@@ -47,11 +50,11 @@
     aria-label="Menu mobile"
   >
     <ul class="max-w-[1240px] mx-auto px-5 py-2 divide-y divide-line">
-      <li><a href="#tarifs" class="mobile-link">Tarifs</a></li>
-      <li><a href="#equipements" class="mobile-link">Équipements</a></li>
-      <li><a href="#visite" class="mobile-link">Horaires</a></li>
-      <li><a href="#faq" class="mobile-link">FAQ</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href={base + "#tarifs"} class="mobile-link">Tarifs</a></li>
+      <li><a href={base + "#equipements"} class="mobile-link">Équipements</a></li>
+      <li><a href={base + "#visite"} class="mobile-link">Horaires</a></li>
+      <li><a href={base + "#faq"} class="mobile-link">FAQ</a></li>
+      <li><a href={base + "#contact"} class="mobile-link">Contact</a></li>
     </ul>
   </div>
 </header>
