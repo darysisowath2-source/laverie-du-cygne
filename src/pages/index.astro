@@ -14,6 +14,7 @@ import Footer from '../components/Footer.astro'
 const hero = '/images/cygne-4.jpg'        // vitrine + logo Laverie du Cygne
 const imgMachines = '/images/cygne-6.jpg' // vue d'ensemble des machines
 const imgInterieur = '/images/cygne-3.jpg' // salle d'attente lumineuse
+const imgSechoir = '/images/cygne-5.jpg'  // panneau CompassPro, "presser le bouton"
 
 const mapsUrl = 'https://www.google.com/maps/search/Laverie+du+Cygne+La+Chapelle-Saint-Luc/@48.317,4.033,17z'
 
@@ -302,6 +303,29 @@ const faq = [
             </figure>
           ))}
         </div>
+
+        <!-- Séchoir CompassPro -->
+        <div class="md:col-span-12 mt-8 grid sm:grid-cols-12 gap-8 items-center border-t border-line pt-10">
+          <figure class="sm:col-span-4 aspect-[4/5] overflow-hidden bg-bg-elev">
+            <img src={imgSechoir} alt="Panneau de commande du séchoir CompassPro, Laverie du Cygne" class="w-full h-full object-cover" loading="lazy" />
+          </figure>
+          <div class="sm:col-span-8 sm:pl-4">
+            <p class="eyebrow mb-3">Séchage</p>
+            <h3 class="font-medium tracking-tight mb-4" style="font-size: var(--text-h3);">
+              Séchoir <em class="font-display italic font-light text-muted-strong">CompassPro.</em>
+            </h3>
+            <p class="text-muted leading-relaxed mb-6">
+              Une fois votre linge chargé dans le séchoir, sélectionnez le programme sur l'écran et
+              <strong class="text-fg font-medium">appuyez sur le bouton</strong> pour lancer le cycle.
+              L'écran affiche la durée restante et vous guide pas à pas.
+            </p>
+            <div class="inline-flex items-center gap-3 px-4 py-3 border border-line rounded-sm bg-bg-elev text-sm">
+              <span class="dot"></span>
+              <span><span class="font-medium text-fg">2,90 €</span> <span class="text-muted">les 15 minutes</span></span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
