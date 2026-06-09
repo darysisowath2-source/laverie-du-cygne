@@ -6,6 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 // Google) se met à jour automatiquement. Pensez aussi à public/sitemap.xml
 // et public/robots.txt (2 lignes).
 export default defineConfig({
-  site: 'https://laverie-du-cygne.pages.dev',
+  site: 'https://laverieducygne.fr',
   vite: { plugins: [tailwindcss()] },
 })
