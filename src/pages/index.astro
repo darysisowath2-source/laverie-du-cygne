@@ -25,8 +25,8 @@ const tarifs = [
 ]
 
 const horaires = [
-  { jour: 'Tous les jours', heures: '7h · 22h' },
-  { jour: 'Dernier lavage',  heures: '21h' },
+  { jour: 'Tous les jours', heures: '7h30 · 23h' },
+  { jour: 'Dernier lavage',  heures: '22h' },
 ]
 
 const atouts = [
@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: 'La couette est-elle acceptée ?',
-    a: 'Oui. La machine 18 kg accueille une couette deux personnes confortablement. Pour les couettes king-size très épaisses, mieux vaut passer en début de journée pour disposer du temps de séchage nécessaire.',
+    a: 'Oui. La machine 20 kg accueille une couette deux personnes confortablement. Pour les couettes king-size très épaisses, mieux vaut passer en début de journée pour disposer du temps de séchage nécessaire.',
   },
   {
     q: 'Comment payer ?',
@@ -80,7 +80,7 @@ const faq = [
 ---
 <Layout
   title="Laverie du Cygne · La Chapelle-Saint-Luc"
-  description="Laverie automatique au Centre Commercial le Cygne, La Chapelle-Saint-Luc. Machines Electrolux 8 à 20 kg, parking devant, ouverte 7j/7 de 7h à 22h."
+  description="Laverie automatique au Centre Commercial le Cygne, La Chapelle-Saint-Luc. Machines Electrolux 8 à 20 kg, parking devant, ouverte 7j/7 de 7h30 à 23h."
 >
   <Nav />
 
@@ -163,17 +163,17 @@ const faq = [
             <span class="w-1.5 h-1.5 rounded-full bg-muted inline-block"></span>
             Fermé
           </span>
-          <span id="badge-label" class="text-muted">jusqu'à 22h</span>
+          <span id="badge-label" class="text-muted">jusqu'à 23h</span>
         </div>
         <script>
           {
             const min = new Date().getHours() * 60 + new Date().getMinutes();
-            const isOpen = min >= 420 && min < 1320; // 7h00–22h00
+            const isOpen = min >= 450 && min < 1380; // 7h30–23h00
             if (!isOpen) {
               document.getElementById('badge-open').style.display = 'none';
               document.getElementById('badge-closed').style.display = '';
               document.getElementById('badge-label').textContent =
-                min < 420 ? 'ouvre à 7h' : 'ouvre demain à 7h';
+                min < 450 ? 'ouvre à 7h30' : 'ouvre demain à 7h30';
             }
           }
         </script>
@@ -390,7 +390,7 @@ const faq = [
               </li>
             ))}
           </ul>
-          <p class="mt-5 text-sm text-muted">Dernier lavage 1h avant la fermeture.</p>
+          <p class="mt-5 text-sm text-muted">Dernier lavage à 22h.</p>
         </div>
 
         <div class="lg:col-span-12 mt-4 lg:mt-8">
@@ -421,6 +421,45 @@ const faq = [
               aria-label="Ouvrir la Laverie du Cygne dans Google Maps"
             ></a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services professionnels -->
+    <section class="border-b border-line bg-fg text-bg">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-16 sm:py-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center reveal-on-scroll">
+        <div>
+          <p class="eyebrow mb-4" style="color: var(--color-accent);">Services professionnels</p>
+          <h2 class="font-medium tracking-tight mb-6 text-bg" style="font-size: var(--text-h2);">
+            Lavage de couches<br/>
+            <em class="font-display italic font-light" style="color: rgba(250,240,245,0.65);">pour les boulangers de l'Aube.</em>
+          </h2>
+          <p class="leading-relaxed mb-8" style="color: rgba(250,240,245,0.80);">
+            La Laverie du Cygne propose depuis plusieurs années un service de ramassage et lavage
+            de couches de boulangers, en utilisant une lessive conforme aux normes alimentaires.
+          </p>
+          <a href="tel:0983475722" class="inline-flex items-center gap-2 px-6 py-3 border border-[rgba(250,240,245,0.30)] text-bg text-sm font-medium hover:border-[rgba(250,240,245,0.70)] transition-colors">
+            Contacter Daniel
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <figure class="aspect-[4/3] overflow-hidden">
+            <img
+              src="/images/couches-boulanger.jpg"
+              alt="Couches de boulanger prêtes à laver, Laverie du Cygne"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="aspect-[4/3] overflow-hidden">
+            <img
+              src="/images/lessive.jpg"
+              alt="Lessive conforme aux normes alimentaires, Laverie du Cygne"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </div>
     </section>
