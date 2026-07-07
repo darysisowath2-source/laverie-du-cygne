@@ -25,7 +25,7 @@ const tarifs = [
 ]
 
 const horaires = [
-  { jour: 'Tous les jours', heures: '7h30 · 23h' },
+  { jour: 'Tous les jours', heures: '6h30 · 23h' },
   { jour: 'Dernier lavage',  heures: '22h' },
 ]
 
@@ -80,7 +80,7 @@ const faq = [
 ---
 <Layout
   title="Laverie du Cygne · La Chapelle-Saint-Luc"
-  description="Laverie automatique au Centre Commercial le Cygne, La Chapelle-Saint-Luc. Machines Electrolux 8 à 20 kg, parking devant, ouverte 7j/7 de 7h30 à 23h."
+  description="Laverie automatique au Centre Commercial le Cygne, La Chapelle-Saint-Luc. Machines Electrolux 8 à 20 kg, parking devant, ouverte 7j/7 de 6h30 à 23h."
 >
   <Nav />
 
@@ -168,12 +168,12 @@ const faq = [
         <script>
           {
             const min = new Date().getHours() * 60 + new Date().getMinutes();
-            const isOpen = min >= 450 && min < 1380; // 7h30–23h00
+            const isOpen = min >= 390 && min < 1380; // 6h30–23h00
             if (!isOpen) {
               document.getElementById('badge-open').style.display = 'none';
               document.getElementById('badge-closed').style.display = '';
               document.getElementById('badge-label').textContent =
-                min < 450 ? 'ouvre à 7h30' : 'ouvre demain à 7h30';
+                min < 390 ? 'ouvre à 6h30' : 'ouvre demain à 6h30';
             }
           }
         </script>
